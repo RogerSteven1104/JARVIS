@@ -1,0 +1,3 @@
+JARVIS_NAME = "JARVIS"
+JARVIS_VERSION = "0.1"
+JARVIS_ENV = "development"
