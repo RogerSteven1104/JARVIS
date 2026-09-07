@@ -1,3 +1,6 @@
+from providers.mock_provider import MockProvider
+
+
 def main():
     print("=" * 32)
     print("        JARVIS 0.1")
@@ -7,6 +10,8 @@ def main():
     print("Escribe 'salir' para cerrar JARVIS.")
     print()
 
+    provider = MockProvider()
+
     while True:
         mensaje = input("Tú: ")
 
@@ -14,10 +19,9 @@ def main():
             print("JARVIS: Hasta luego.")
             break
 
-        print(f"JARVIS: Recibí tu mensaje: {mensaje}")
+        respuesta = provider.responder(mensaje)
+        print(f"JARVIS: {respuesta}")
 
 
 if __name__ == "__main__":
     main()
-
-    
