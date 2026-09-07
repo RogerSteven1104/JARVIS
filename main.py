@@ -1,3 +1,4 @@
+from core.jarvis import Jarvis
 from providers.mock_provider import MockProvider
 
 
@@ -11,6 +12,7 @@ def main():
     print()
 
     provider = MockProvider()
+    jarvis = Jarvis(provider)
 
     while True:
         mensaje = input("Tú: ")
@@ -19,7 +21,7 @@ def main():
             print("JARVIS: Hasta luego.")
             break
 
-        respuesta = provider.responder(mensaje)
+        respuesta = jarvis.procesar(mensaje)
         print(f"JARVIS: {respuesta}")
 
 
