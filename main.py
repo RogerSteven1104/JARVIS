@@ -24,6 +24,7 @@ def main():
         respuesta = jarvis.procesar(mensaje)
         print(f"JARVIS: {respuesta}")
 
+    print(jarvis.conversacion.obtener_mensajes())
 
 if __name__ == "__main__":
     main()

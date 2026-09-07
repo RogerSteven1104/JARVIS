@@ -1,4 +1,5 @@
 from config.settings import JARVIS_NAME, JARVIS_VERSION
+from core.conversation import Conversation
 
 
 class Jarvis:
@@ -6,6 +7,13 @@ class Jarvis:
         self.provider = provider
         self.name = JARVIS_NAME
         self.version = JARVIS_VERSION
+        self.conversacion = Conversation()
 
     def procesar(self, mensaje):
-        return self.provider.responder(mensaje)
+        self.conversacion.agregar("usuario", mensaje)
+
+        respuesta = self.provider.responder(mensaje)
+
+        self.conversacion.agregar("jarvis", respuesta)
+
+        return respuesta
