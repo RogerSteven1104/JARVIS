@@ -1,8 +1,9 @@
 from core.jarvis import Jarvis
 from providers.mock_provider import MockProvider
-
+from config.logging_config import configurar_logging
 
 def main():
+    configurar_logging()
     print("=" * 32)
     print("        JARVIS 0.1")
     print("=" * 32)
