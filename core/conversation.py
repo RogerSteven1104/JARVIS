@@ -9,4 +9,4 @@ class Conversation:
         })
 
     def obtener_mensajes(self):
-        return self.mensajes
+        return self.mensajes.copy()

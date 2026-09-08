@@ -12,7 +12,8 @@ class Jarvis:
     def procesar(self, mensaje):
         self.conversacion.agregar("usuario", mensaje)
 
-        respuesta = self.provider.responder(mensaje)
+        historial = self.conversacion.obtener_mensajes()
+        respuesta = self.provider.responder(historial)
 
         self.conversacion.agregar("jarvis", respuesta)
 
